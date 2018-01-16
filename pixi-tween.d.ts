@@ -11,7 +11,7 @@ interface on {
 }
 
 declare namespace PIXI {
-    class Graphics {
+    interface Graphics {
         drawPath(path: PIXI.tween.TweenPath): PIXI.Graphics;
     }
 
@@ -103,11 +103,11 @@ declare namespace PIXI {
         class TweenManager {
             constructor();
             tweens: Array<PIXI.tween.Tween>;
-            addTween(tween: PIXI.tween.Tween);
+            addTween(tween: PIXI.tween.Tween): void;
             createTween(target: object, config?: PIXI.tween.tweenConfig): PIXI.tween.Tween;
             getTweensForTarget(target: object): Array<PIXI.tween.Tween>;
             removeTween(tween: PIXI.tween.Tween);
-            update(deltaMS: number);
+            update(deltaMS: number): void;
         }
 
         class TweenPath {
@@ -133,11 +133,11 @@ declare namespace PIXI {
             quadraticCurveTo(cpX: number, cpY: number, toX: number, toY: number): PIXI.tween.TweenPath;
             totalDistance(): number;
         }
-
-		tweenManager: PIXI.tween.TweenManager;
-	}
+    }
+    
+    let tweenManager: PIXI.tween.TweenManager;
 }
 
-declare module "pixi-tween" {
+declare module "k8w-pixi-tween" {
     export = PIXI.tween;
 }

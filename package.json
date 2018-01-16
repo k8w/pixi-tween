@@ -1,6 +1,6 @@
 {
-  "name": "pixi-tween",
-  "version": "0.7.0",
+  "name": "k8w-pixi-tween",
+  "version": "0.7.4",
   "description": "pixi-tween is a tween plugin for Pixi.js v4.1.0 or higher",
   "author": "Dave Moore <themoonrat@gmail.com>",
   "contributors": [
@@ -58,6 +58,8 @@
     "watch": "^1.0.2"
   },
   "files": [
-    "bin"
-  ]
+    "bin",
+    "pixi-tween.d.ts"
+  ],
+  "typings": "pixi-tween.d.ts"
 }
