@@ -20,7 +20,7 @@ declare namespace PIXI {
             from?: object;
             to?: object;
             delay?: number;
-            easing?: Function;
+            easing?: Function | string;
             expire?: boolean;
             loop?: boolean;
             path?: object;
@@ -29,7 +29,7 @@ declare namespace PIXI {
             repeat?: number;
             time?: number;
             on?: on;
-            speed?: number; 
+            speed?: number;
         }
 
         class Tween {
@@ -66,7 +66,7 @@ declare namespace PIXI {
             off(event: "start" | "end" | "repeat" | "update" | "stop" | "pingpong", fn: Function, context?: any, once?: boolean);
         }
 
-        interface Easing {
+        const Easing: {
             inBack(v?: number): Function;
             inBounce(): Function;
             inCirc(): Function;
@@ -134,7 +134,7 @@ declare namespace PIXI {
             totalDistance(): number;
         }
     }
-    
+
     let tweenManager: PIXI.tween.TweenManager;
 }
 
